@@ -1,0 +1,19 @@
+{
+  "name": "myjs",
+  "version": "0.0.0",
+  "description": "My JS stuff",
+  "main": "my.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohxyz/myjs.git"
+  },
+  "author": "ohxyz",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/ohxyz/myjs/issues"
+  },
+  "homepage": "https://github.com/ohxyz/myjs#readme"
+}

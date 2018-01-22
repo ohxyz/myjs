@@ -2,7 +2,7 @@
 
     if ( my !== undefined ) {
 
-        window.alert( 'window.my is defined!' );
+        window.alert( 'window.my is defined! Another namespace required.' );
         return;
     }
     else {
