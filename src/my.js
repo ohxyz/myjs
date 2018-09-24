@@ -20,6 +20,7 @@
      * Poll until condition is met
      *
      * @param { function } conditionCallback - Function returns true or false
+     * @param { function } onConditionMet - Run when conditionCallback returns true
      * @param { number } interval - Poll every `interval` seconds, default to 100
      * @param { number } max - Maximum trials of polling, default to 50
      * @returns { undefined }
