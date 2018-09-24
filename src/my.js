@@ -1,5 +1,5 @@
 /**
- * This is a collection of utilities intented to be used in a browser's context
+ * A collection of utilities intented to be used in a browser
  *
  * @author Ohxyz
  * @namespace my
@@ -23,11 +23,11 @@
      * @param { function } onConditionMet - Run when conditionCallback returns true
      * @param { number } interval - Poll every `interval` seconds, default to 100
      * @param { number } max - Maximum trials of polling, default to 50
-     * @returns { undefined }
+     * @returns { undefined } Undefined
      *
      * @memberof my
      */
-    var pollWithCondition = function ( conditionCallback, onConditionMet, interval, max ) {
+    function pollWithCondition( conditionCallback, onConditionMet, interval, max ) {
 
         var interval = ( typeof interval === 'number' ? interval : 100 );
         var max = ( typeof max === 'number' ? max : 50 );
@@ -52,7 +52,7 @@
     }
 
     /**
-     * Exmample: ifDefined( window.jQuery, window._ )
+     * Example: ifDefined( window.jQuery, window._ )
      * 
      * @param { any } arguments - anything.
      * @returns { boolean } If one of the arguments is undefined, then returns false.
@@ -74,9 +74,8 @@
     // Assignment
     window.my = {
 
-        if: pollWithCondition,
+        pollWithCondition: pollWithCondition,
         ifDefined: ifDefined
     };
-
 
 } )( window.my );

@@ -1,23 +1,29 @@
 {
   "name": "myjs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "My JS stuff",
   "main": "my.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "doc": "jsdoc ./src/my.js"
+    "docs": "jsdoc --configure jsdoc.conf.json --verbose",
+    "watch": "nodemon --watch ./src --exec \"npm run docs\"",
+    "serve:docs": "http-server ./docs -p 5000 -c-1",
+    "dev": "npm run serve:docs | npm run watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ohxyz/myjs.git"
   },
   "author": "ohxyz",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ohxyz/myjs/issues"
   },
   "homepage": "https://github.com/ohxyz/myjs#readme",
   "devDependencies": {
-    "jsdoc": "^3.5.5"
+    "http-server": "^0.11.1",
+    "jsdoc": "^3.5.5",
+    "minami": "^1.2.3",
+    "nodemon": "^1.18.4"
   }
 }
