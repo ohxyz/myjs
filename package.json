@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ohxyz/myjs/issues"
   },
-  "homepage": "https://github.com/ohxyz/myjs#readme"
+  "homepage": "https://github.com/ohxyz/myjs#readme",
+  "devDependencies": {
+    "jsdoc": "^3.5.5"
+  }
 }

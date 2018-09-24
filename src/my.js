@@ -1,3 +1,9 @@
+/**
+ * This is a collection of utilities intented to be used in a browser's context
+ *
+ * @author Ohxyz
+ * @namespace my
+ */
 ( function( my ) {
 
     if ( my !== undefined ) {
@@ -10,24 +16,25 @@
         window.my = {};
     }
 
-
-    /* Poll until condition is met
+    /** 
+     * Poll until condition is met
      *
-     * @param { function } conditionCallback - function returns true or false
-     * @param { number } interval - poll every `interval` seconds, default 100
-     * @param { number } max - maximum times it polls, default: 50
+     * @param { function } conditionCallback - Function returns true or false
+     * @param { number } interval - Poll every `interval` seconds, default to 100
+     * @param { number } max - Maximum trials of polling, default to 50
+     * @returns { undefined }
+     *
+     * @memberof my
      */
-    function pollWithCondition( conditionCallback, onConditionMet, interval, max ) {
+    var pollWithCondition = function ( conditionCallback, onConditionMet, interval, max ) {
 
         var interval = ( typeof interval === 'number' ? interval : 100 );
         var max = ( typeof max === 'number' ? max : 50 );
-
         var count = 0;
 
         function poll() {
 
             if ( conditionCallback() === true ) {
-
                 onConditionMet();
             }
             else {
@@ -43,23 +50,24 @@
         poll();
     }
 
-    /* Exmample: ifDefined( window.jQuery, window._ )
+    /**
+     * Exmample: ifDefined( window.jQuery, window._ )
+     * 
+     * @param { any } arguments - anything.
+     * @returns { boolean } If one of the arguments is undefined, then returns false.
      *
+     * @memberof my
      */
     function ifDefined() {
 
         for ( var i = 0; i < arguments.length; i ++ ) {
 
-            var obj = arguments[ i ];
-
-            if ( obj === undefined ) {
-
+            if ( arguments[ i ] === undefined ) {
                 return false;
             }
         }
 
         return true;
-
     }
 
     // Assignment
