@@ -76,8 +76,7 @@
      * @memberof my
      * @link https://stackoverflow.com/questions/8834126/how-to-efficiently-check-if-variable-is-array-or-object-in-nodejs-v8
      */
-    function isObject( a ) {
-
+    function isRealObject( a ) {
         return ( !!a ) && ( a.constructor === Object );
     };
 
