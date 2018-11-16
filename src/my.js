@@ -313,6 +313,27 @@
     }
 
     /**
+     * Sleep for some time in seconds
+     *
+     * @param {number} seconds - How many seconds to sleep/wait/delay
+     * @memberof my
+     */
+    function sleep( seconds ) {
+
+        var start = new Date().getTime();
+
+        while( true ) {
+
+            var now = new Date().getTime();
+
+            if ( ( now - start ) > seconds * 1000 ) {
+                
+                break;
+            }
+        }
+    }
+
+    /**
      * Give an array of objects, sort by one of the keys in the object
      *
      * @memberof my
