@@ -399,6 +399,55 @@
         return array;
     }
 
+    /**
+     * Caesar Cipher implementation. Letter cases and punctuation chars are remained
+     *
+     * @param {string} input - A serial string
+     * @param {Integer} key - How many keys to shift. Use modulo result if exceeds 26
+     * @returns {string} Ciphered results
+     * @memberof my
+     */
+    function caesarCipher( input, key ) {
+
+        if ( typeof input !== 'string' 
+                || typeof key !== 'number' 
+                || Number.isInteger( key ) === false ) {
+
+            throw new Error( 'Invalid parameter values.' );
+        }
+        
+        var key = key % 26;
+        var convertedChars = [];
+        var lookupTable = 'abcdefghijklmnopqrstuvwxyz';
+
+        lookupTable = lookupTable.concat( lookupTable );
+        
+        for ( var i = 0; i < input.length; i ++ ) {
+
+            var char = input[ i ];
+            var charFound = '';
+            
+            if ( /[a-zA-Z]/.test( char ) === true ) {
+
+                charFound = lookupTable[ lookupTable.indexOf( char ) + key ];
+
+                if ( char.charCodeAt() >= 65 && char.charCodeAt() <= 90 ) {
+
+                    charFound = charFound.toUpperCase();
+                }
+            }
+            else {
+
+                charFound = char;
+            }
+
+            convertedChars.push( charFound );
+
+        }
+
+        return convertedChars.join( '' );
+    }
+
     // Assignment
     window.my = {
 
