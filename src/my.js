@@ -416,10 +416,10 @@
             throw new Error( 'Invalid parameter values.' );
         }
         
-        var key = key % 26;
-        var convertedChars = [];
         var lookupTable = 'abcdefghijklmnopqrstuvwxyz';
-
+        var key = key % lookupTable.length;
+        var convertedChars = [];
+        
         lookupTable = lookupTable.concat( lookupTable );
         
         for ( var i = 0; i < input.length; i ++ ) {
@@ -429,7 +429,7 @@
             
             if ( /[a-zA-Z]/.test( char ) === true ) {
 
-                charFound = lookupTable[ lookupTable.indexOf( char ) + key ];
+                charFound = lookupTable[ lookupTable.indexOf( char.toLowerCase() ) + key ];
 
                 if ( char.charCodeAt() >= 65 && char.charCodeAt() <= 90 ) {
 
@@ -442,7 +442,6 @@
             }
 
             convertedChars.push( charFound );
-
         }
 
         return convertedChars.join( '' );
